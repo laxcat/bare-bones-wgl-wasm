@@ -1,0 +1,14 @@
+Prerequisites:
+-----------------
+
+• Emscripten compiler
+    https://emscripten.org/docs/getting_started/downloads.html#installation-instructions
+
+• Some sort of local webhost pointed to this directory as its root.
+
+
+Instructions:
+-----------------
+
+To compile the wasm, run the build_wasm script. The javascript is intended to
+run natively on a modern browser.

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd "$DIR"
+
+em++ \
+cpp/main.cpp \
+-std=c++17 \
+-s ERROR_ON_UNDEFINED_SYMBOLS=0 \
+-s MALLOC="emmalloc" \
+-s TOTAL_MEMORY=32MB \
+-o bin/main.wasm &&
+ls -l bin/main.wasm &&
+open http://localhost:8000

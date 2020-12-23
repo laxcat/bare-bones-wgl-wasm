@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>OpenGL / WebAssembly</title>
+  <style>
+    html, body, #gl { margin: 0; padding: 0; width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <canvas id="gl"></canvas>
+  <script src="js/WGLASM.js"></script>
+  <script src="js/Game.js"></script>
+  <script>
+    const engine = new WGLASM({
+      manager: new Game(),
+      canvas: document.getElementById('gl'),
+      wasm: 'bin/main.wasm',
+      shaders: [{vert:'glsl/vert.glsl', frag:'glsl/frag.glsl'},],
+    });
+  </script>
+</body>
+</html>
